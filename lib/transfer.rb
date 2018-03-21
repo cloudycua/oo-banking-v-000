@@ -1,5 +1,3 @@
-require 'pry'
-
 class Transfer
   attr_reader :sender, :receiver, :amount
   attr_accessor :status, :count
@@ -23,7 +21,6 @@ class Transfer
       @status = "complete"
       @count += 1
     elsif sender.valid? == false
-      binding.pry
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
     end
