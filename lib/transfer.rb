@@ -1,5 +1,3 @@
-require 'pry'
-
 class Transfer
   attr_reader :sender, :receiver, :amount
   attr_accessor :status, :count
@@ -18,7 +16,6 @@ class Transfer
 
   def execute_transaction
     if count < 1 && sender.valid?
-      binding.pry
       sender.balance = sender.balance - amount
       receiver.balance = receiver.balance + amount
       @status = "complete"
