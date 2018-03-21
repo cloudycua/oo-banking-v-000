@@ -21,6 +21,7 @@ class Transfer
       @status = "complete"
       @count += 1
     elsif sender.valid? == false
+      binding.pry
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
     end
